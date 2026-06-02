@@ -45,6 +45,7 @@ targets:
       catalog: youtube_prod
       schema: prod
       warehouse_id: 0a5882b9ee1e204b
+      spn_id: ef2ee043-e6eb-4017-80d7-ef765f4b86ff
     permissions:
       - user_name: aimanramli.8@gmail.com
         level: CAN_MANAGE
