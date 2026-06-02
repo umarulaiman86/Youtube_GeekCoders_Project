@@ -40,12 +40,14 @@ targets:
     mode: production
     workspace:
       host: https://dbc-0b58cee6-85ce.cloud.databricks.com
-      root_path: /Workspace/Users/aimanramli.8@gmail.com/youtube_project_bundle_prod_v7
+      root_path: /Workspace/Shared/youtube_project_bundle_prod
     variables:
       catalog: youtube_prod
       schema: prod
       warehouse_id: 0a5882b9ee1e204b
       spn_id: ef2ee043-e6eb-4017-80d7-ef765f4b86ff
     permissions:
+      - service_principal_name: ef2ee043-e6eb-4017-80d7-ef765f4b86ff
+        level: CAN_MANAGE
       - user_name: aimanramli.8@gmail.com
         level: CAN_MANAGE
