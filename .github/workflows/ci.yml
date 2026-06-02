@@ -10,8 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      DATABRICKS_HOST: https://dbc-0b58cee6-85ce.cloud.databricks.com
-      DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
+      DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
+      DATABRICKS_CLIENT_ID: ${{ secrets.DATABRICKS_CLIENT_ID }}
+      DATABRICKS_CLIENT_SECRET: ${{ secrets.DATABRICKS_CLIENT_SECRET }}
 
     steps:
       - name: Checkout code
@@ -22,9 +23,6 @@ jobs:
 
       - name: Check Databricks current user
         run: databricks current-user me
-
-      - name: Test workspace folder permission
-        run: databricks workspace mkdirs /Workspace/Users/aimanramli.8@gmail.com/github_action_test_folder
 
       - name: Validate Databricks Bundle
         working-directory: ./youtube_project_bundle
